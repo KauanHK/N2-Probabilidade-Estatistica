@@ -23,10 +23,12 @@ def create_fig(df: pd.DataFrame, x: str, y: str) -> None:
     plt.tight_layout()
 
     print(f'Salvando gráfico {x} ...')
-    plt.savefig(os.path.join('data', f'{x}.png'))
+    plt.savefig(os.path.join('graficos', f'{x}.png'))
 
 
 def main() -> None:
+
+    os.makedirs('graficos', exist_ok = True)
 
     print('Lendo tabela...')
     df = pd.read_csv(os.path.join('data', 'data.csv'))
